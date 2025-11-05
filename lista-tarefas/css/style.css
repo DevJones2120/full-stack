@@ -1,5 +1,6 @@
 body {
-    background: rgb(217, 234, 253);
+    background: url("../img/img4.jpg") no-repeat;  
+    background-size: cover;
 }
 
 #container {
@@ -15,6 +16,11 @@ body {
     color: antiquewhite;
     padding: 15px;
     font-size: 30px;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000; 
 }
 
 #tarefa {
@@ -26,7 +32,8 @@ body {
     color: rgb(133, 43, 43);
 }
 
-#button1 {
-    border: 2px solid black;
-    border-radius: 4px;
+#btnAdicionar {
+    background: rgb(75, 129, 187);
+    color: #fff;
+    border-radius: 6px;
 }
