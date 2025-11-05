@@ -4,7 +4,7 @@ body {
 }
 
 #container {
-    background: rgb(175, 198, 219);
+    
     border: 2px solid black;
     border-radius: 5px;
     max-width: 400px;
@@ -36,4 +36,9 @@ body {
     background: rgb(75, 129, 187);
     color: #fff;
     border-radius: 6px;
+}
+
+#listaSites li {
+    text-decoration: none;
+    text-align: start;
 }
