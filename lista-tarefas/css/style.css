@@ -38,7 +38,17 @@ body {
     border-radius: 6px;
 }
 
+#listaSites {
+    display: flex;
+    justify-content: center;
+}
+
 #listaSites li {
     text-decoration: none;
-    text-align: start;
+    list-style-type: none;
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
 }
