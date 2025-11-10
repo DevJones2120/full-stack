@@ -1,4 +1,14 @@
-let numero1 = parseInt(prompt("Digite um número"));
-let numero2 = parseInt(prompt("Digite outro número"));
+let numero1 = Number(prompt("Digite um número"));
+let numero2 = Number(prompt("Digite outro número"));
 
-console.log(numero1 + numero2)
+// Soma
+console.log("Soma : " + numero1 + numero2)
+
+// Sub
+console.log("Subtração : " , numero1 - numero2)
+
+// Mult
+console.log("Multiplcação : " + numero1 * numero2)
+
+// Div
+console.log("Divisão : " + numero1 / numero2)
