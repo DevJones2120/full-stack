@@ -20,3 +20,6 @@ function mostraDobro(valor) {
 let numero = Number(prompt("Digite um número desejado"));
 
 mostraDobro(numero);
+
+
+
