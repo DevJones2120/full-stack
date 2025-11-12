@@ -6,10 +6,10 @@ dizendo se ele é positivo, negativo ou igual a zero.
 
 let numero = Number(prompt("Digite sua senha"))
 
-if (numero >= 1) {
+if (numero > 0) {
     alert("Positivo✅")
-} else if (numero > 0) {
-    alert("Positivo✅")
-} else {
+} else if (numero < 0) {
     alert("Negativo❌")
+} else {
+    alert("O número é igual a 0.")
 }
