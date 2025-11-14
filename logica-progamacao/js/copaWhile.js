@@ -18,8 +18,8 @@ Fim
 let anoInicio = Number(prompt("Digite o ano da sua primeira copa do mundo.⚽"));
 let anoAtual = 2025;
 
-while (anoInicio < anoAtual + 4) {
-    console.log(anoInicio)
-    anoInicio++
+while (anoInicio <= anoAtual) {
+    document.write("Copa do mundo: ", anoInicio, "<br>")
+    anoInicio = anoInicio + 4;
 }
 
