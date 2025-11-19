@@ -4,6 +4,7 @@ const lista = document.querySelector(".lista");
 const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputTel = document.getElementById("telefone");
+const inputEnd = document.getElementById("endereco");
 const listaMsg = document.querySelector(".lista-msg")
 
 form.addEventListener("submit", function(event) {
@@ -23,28 +24,28 @@ form.addEventListener("submit", function(event) {
         }
 
     // CRIANDO BOTÃO EXCLUIR    
-        const btnExcluir = document.createElement("button");
-        btnExcluir.textContent = "Excluir";
-        btnExcluir.className = "btn-delete";
+    const btnExcluir = document.createElement("button");
+    btnExcluir.textContent = "Excluir";
+    btnExcluir.className = "btn-delete";
 
 
 
-        function deletar () {
-            
-        }
     //CRIAR <li>
-        const li = document.createElement("li");
+    const li = document.createElement("li");
 
     //CRIANDO FUNÇÃO PARA EXCLUIR
-
     btnExcluir.addEventListener("click", function() {
-        alert("teste")
-    })
+        const confirmar = confirm("Tem certeza que deseja excluir o contato ?");
 
+        if (confirmar) {
+            li.remove();
+        } 
+    });
         li.innerHTML = `
             <span class="contato-nome">👤: ${inputNome.value}</span>
             <span class="contato-email">📧: ${inputEmail.value}</span>
             <span class="contato-tel">📞: ${inputTel.value}</span>
+            <span class="contato-end">📞: ${inputEnd.value}</span>
         `;
         lista.appendChild(li)
         li.appendChild(btnExcluir)
