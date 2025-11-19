@@ -4,6 +4,7 @@ const lista = document.querySelector(".lista");
 const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputTel = document.getElementById("telefone");
+const listaMsg = document.querySelector(".lista-msg")
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -13,6 +14,14 @@ form.addEventListener("submit", function(event) {
     if (inputNome.value == "" || inputEmail.value == "" || inputTel.value == "") {
         alert("Insira seus dados por favor.")
         return false;
+    }
+
+    // CONDIÇÃO PARA RETIRAR A li > .lista-msg
+    // se essa lista === true
+        if (listaMsg) {
+            listaMsg.remove();
+        }
+
 
     // MENSAGENS IRÃO APARECER EM CADA FORMULÁRIO
     // if (inputNome.value == "") {
@@ -28,8 +37,7 @@ form.addEventListener("submit", function(event) {
     // if (inputTel.value == "") {
     //     alert("Insira seu telefone por favor.")
     //     return false;
-    // }
-    }
+    
 
 
     //CRIAR <li>
