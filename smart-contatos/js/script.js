@@ -22,32 +22,32 @@ form.addEventListener("submit", function(event) {
             listaMsg.remove();
         }
 
-
-    // MENSAGENS IRÃO APARECER EM CADA FORMULÁRIO
-    // if (inputNome.value == "") {
-    //     alert("Insira seu nome por favor.")
-    //     return false;
-    // }--
-
-    // if (inputEmail.value == "") {
-    //     alert("Insira seu email por favor.")
-    //     return false;
-    // }
-
-    // if (inputTel.value == "") {
-    //     alert("Insira seu telefone por favor.")
-    //     return false;
-    
+    // CRIANDO BOTÃO EXCLUIR    
+        const btnExcluir = document.createElement("button");
+        btnExcluir.textContent = "Excluir";
+        btnExcluir.className = "btn-delete";
 
 
+
+        function deletar () {
+            
+        }
     //CRIAR <li>
         const li = document.createElement("li");
+
+    //CRIANDO FUNÇÃO PARA EXCLUIR
+
+    btnExcluir.addEventListener("click", function() {
+        alert("teste")
+    })
+
         li.innerHTML = `
             <span class="contato-nome">👤: ${inputNome.value}</span>
             <span class="contato-email">📧: ${inputEmail.value}</span>
             <span class="contato-tel">📞: ${inputTel.value}</span>
         `;
         lista.appendChild(li)
+        li.appendChild(btnExcluir)
 
         //LIMPAR INPUTS
         form.reset();
