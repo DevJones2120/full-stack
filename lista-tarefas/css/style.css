@@ -4,7 +4,6 @@ body {
 }
 
 #container {
-    
     border: 2px solid black;
     border-radius: 5px;
     max-width: 400px;
@@ -49,7 +48,11 @@ body {
     padding: 8px;
 }
 
-a {
+#container > a {
     text-decoration: none;
-    color: black;
+    color: rgb(16, 58, 104);
+}
+
+#container > a:hover {
+    color: rgb(219, 75, 87);
 }
