@@ -1,0 +1,18 @@
+*{
+    max-width: 80%;
+    padding: 0 auto;
+}
+
+.top{
+    border: 2px solid black;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    padding: auto;
+    margin-left: 60%;
+    background-color: rgb(131, 250, 214);
+}
+
+body{
+    background-color: rgba(132, 190, 255, 0.432);
+}
