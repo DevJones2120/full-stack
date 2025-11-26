@@ -3,17 +3,33 @@ body {
 
 }
 
-.menu {
+.top {
     border: 2px solid black;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     padding: 2px;
+    margin: 10px 30px 80px 30px;
 }
 
 .container {
-    height: auto;
-    max-width: 300px;
     display: flex;
+    justify-content: center;
+    padding: 0 auto;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 0 20px 0 20px;
+    
+
+    p {
+        font-size: 22px;
+    }
+}
+
+img {
+    border-radius: 15px;
 }
