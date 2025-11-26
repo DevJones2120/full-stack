@@ -11,15 +11,37 @@ const nomes = [
   { id: 5, nome: "Doris", idade: "33" },
 ];
 
+
+// Rota principal
+app.get("/", (req, res) => {
+    res.send("Você está na Rota Principal !")
+});
+
+// Criando funções auxiliares
+// Retornar o objeto por Id
+function buscarNomePorId(id) {
+    return nomes.filter((nome) => nome.id == id )
+}
+
 //Rota teste
 app.get("/teste", (req, res) => {
     res.send("API nodePepole está funcionando!");
 });
 
+
 // Buscando nomes (ListaNomes)
-app.get("/nomes", (req, res) => {
+app.get("/listaNomes", (req, res) => {
     res.send(nomes)
 });
+
+
+// Buscando por ID
+app.get("/ListaNomes/:id", (req, res) => {
+   let index = req.params.id;
+   
+   res.json(buscarNomePorId(index))
+});
+
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando no endereço http://localhost:${PORT}`);
