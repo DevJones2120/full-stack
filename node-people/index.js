@@ -77,6 +77,16 @@ app.post("/times", (req, res) => {
     res.status(201).send("Time cadastrado com sucesso !")
 });
 
+// Rota para alterar
+app.put("/times/:id", (req, res) => {
+    let index = buscarIdTimes(req.params.id);
+    times[index].nome = req.body.nome;
+    times[index].estado = req.body.estado;
+    times[index].titulos = req.body.titulos;
+
+    res.json(times);
+})
+
 
 // ROTAS NOMES
 
@@ -93,7 +103,7 @@ app.get("/teste", (req, res) => {
 
 
 // Buscando nomes (ListaNomes)
-app.get("/listaNomes", (req, res) => {
+app.get("/ListaNomes", (req, res) => {
     res.send(nomes)
 });
 
@@ -119,13 +129,22 @@ app.delete("/ListaNomes/:id", (req, res) => {
     
 // Se não encontrar, retorna erro
     if (index === -1) {
-        return res.status(404).send(`Nenhum nome com id${id} foi encontrado`);
+        return res.status(404).send(`Nenhum nome com id ${id} foi encontrado`);
     }
     
     nomes.splice(index, 1);
     res.send(`Nomes com id ${req.params.id} excluida com sucesso !`)
 
 });
+
+// Rota alterar
+app.put("/ListaNomes/:id", (req, res) => {
+    let index = buscarIdNomes(req.params.id);
+    nomes[index].nome = req.body.nome;
+    nomes[index].idade = req.body.idade;
+
+    res.json(nomes);
+})
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando no endereço http://localhost:${PORT}`);
