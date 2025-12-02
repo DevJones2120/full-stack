@@ -1,11 +1,10 @@
 import express from  "express";
 const app = express();
 
-app.get("/", (req, res) => {
-    res.send("Olá Node js")
-});
-
 export default app;
+
+// Indicar para express ler o body com jason
+app.use(express.json());
 
 const cadastros = [
     {
@@ -37,10 +36,20 @@ const cadastros = [
     }
 ];
 
-// Funçõs auxiliares
+// FUNÇÕES AUXILIARES
 function buscarCadastrosPorId(id) {
     return cadastros.filter((cadastro) => cadastro.id == id)
 }
+
+// Deletar
+function buscarIdCadastros(id) {
+    return cadastros.findIndex((cadastros) => cadastros.id == id)
+}
+
+// ROTAS
+app.get("/", (req, res) => {
+    res.send("Olá Node js")
+});
 
 // Buscar nomes
 app.get("/ListaCadastros", (req, res) => {
@@ -48,6 +57,42 @@ app.get("/ListaCadastros", (req, res) => {
 });
 
 // Buscar cadastros por id
-app.get ("/ListaCadastros/:id" (req, res) => {
-    
+app.get ("/ListaCadastros/:id", (req, res) => {
+    let index = req.params.id;
+
+    res.json(buscarCadastrosPorId(index))
+});
+
+// Criar cadastros
+app.post ("/ListaCadastros", (req, res) => {
+    cadastros.push(req.body);
+    res.status(201).send("Nomes cadastrados com sucesso !✅");
+});
+
+// Excluir cadastro
+app.delete("/ListaCadastros/:id", (req, res) => {
+    let id = req.params.id;
+    let index = buscarIdCadastros(id);
+
+    // Se não encontrar, retorna erro
+    if (index === -1) {
+        return res.status(404).send(`Nenhum cadastro com id ${id} encontrado ⚠️`)
+    }
+
+    cadastros.splice(index, 1);
+    res.send(`Cadastro com id ${req.params.id} excluído com sucesso !✅`)
+});
+
+// Alterar cadastro
+app.put("/ListaCadastros/:id", (req, res) => {
+    let index = buscarIdCadastros(req.params.id);
+    cadastros[index].nome = req.body.nome;
+    cadastros[index].telefone = req.body.telefone;
+    cadastros[index].cpf = req.body.cpf;
+    cadastros[index].email = req.body.email;
+    cadastros[index].idade = req.body.idade;
+    cadastros[index].endereco = req.body.endereco;
+
+    res.json(cadastros);
+
 })
