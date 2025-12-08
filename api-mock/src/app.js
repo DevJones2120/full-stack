@@ -7,7 +7,17 @@ const app = express();
 // app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Olá Node js")
+    res.send("Seja bem vindo á Copa do Mundo !🏆")
+});
+
+
+// Buscar todas as seleções
+app.get("/selecoes", (req, res) => {
+    const sql = "select * from selecoes";
+
+    conexao.query(sql, (erro, result) => {
+        res.json(result)
+    })
 });
 
 export default app;
