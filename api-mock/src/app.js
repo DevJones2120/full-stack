@@ -4,7 +4,7 @@ import conexao from "../infra/conexão.js"
 const app = express();
 
 // Indicar para express ler o body com jason
-// app.use(express.json());
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("Seja bem vindo á Copa do Mundo !🏆")
@@ -41,3 +41,13 @@ app.delete("/selecoes/:id", (req, res) => {
 
 })
 export default app;
+
+// Criando POST para cadastrar
+app.post("/selecoes", (req, res) => {
+    const selecao = req.body;
+    const sql = "INSERT INTO selecoes SET?;";
+
+    conexao.query(sql, selecao, () => {
+        res.json({ mensagem: "Cadastrado com sucesso !"});
+    })
+});
