@@ -40,7 +40,7 @@ app.delete("/selecoes/:id", (req, res) => {
     });
 
 })
-export default app;
+
 
 // Criando POST para cadastrar
 app.post("/selecoes", (req, res) => {
@@ -51,3 +51,17 @@ app.post("/selecoes", (req, res) => {
         res.json({ mensagem: "Cadastrado com sucesso !"});
     })
 });
+
+// Atualizando registro
+app.put("/selecoes/:id", (req, res) => {
+    const id = req.params.id;
+    const selecao = req.body;
+    const sql = "update selecoes set ? where id=?";
+
+    conexao.query(sql, [selecao, id], ()=> {
+        res.json({ mensagem: "Atualizado com sucesso ✅!"});
+    });
+})
+
+
+export default app;
