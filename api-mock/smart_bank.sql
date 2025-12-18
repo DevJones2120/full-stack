@@ -1,4 +1,4 @@
--- Cria o banco de dados onde vamos trabalhar
+-- BANCO DE DADOS
 create database smart_bank;
 
 use smart_bank;
@@ -16,9 +16,9 @@ create table dados (
 
 -- Registros
 insert into dados (nome, idade, email, telefone, cpf, endereco) values
-	("Eduardo Ramos", "60", "edu.ramos@orutos.com", "1245454-7", "454.545.545.55", "Rua Orutos F"),
-    ("Juliana Clara", "85", "juliana@orutos.com", "545445454", "454.554.455.44", "Rua Orutos"),
-	("Davi Jones", "21", "DevJones@orutos.com", "454542525", "454.454.545.54", "Rua Cotia");
+	("Eduardo Ramos", "60", "edu.ramos@dev.com", "1245454-7", "454.545.545.55", "Rua Cotia n°255"),
+    ("Juliana Clara", "85", "juliana@dev.com", "545445454", "454.554.455.44", "Rua Fernando Gomes °1258"),
+	("Davi Jones", "21", "DevJones@dev.com", "454542525", "454.454.545.54", "Rua Gusmões n°1678");
 
 select * from dados;
     
